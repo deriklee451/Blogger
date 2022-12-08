@@ -2,7 +2,7 @@
   <div class="container ">
     <div class="row justify-content-center">
       <div class="col-10">
-        <div class="row border mb-2 bg-light elevation-5" v-for="b in blogs">
+        <div class="row border mb-2 bg-light elevation-5 selectable" v-for="b in blogs">
           <BlogCard :blog="b" />
 
         </div>
@@ -33,7 +33,11 @@ export default {
     }
     return {
       blogs: computed(() =>
-        AppState.blogs)
+        AppState.blogs),
+
+
+
+
     }
   },
   components: { BlogCard }

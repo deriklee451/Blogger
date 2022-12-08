@@ -9,6 +9,11 @@ class BlogsService {
         AppState.blogs = res.data
     }
 
+    async getBlogById(id) {
+        const res = await api.get('api/blogs/' + id)
+        logger.log(res.data)
+    }
+
 }
 
 export const blogsService = new BlogsService()

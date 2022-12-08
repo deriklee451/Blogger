@@ -1,5 +1,5 @@
 <template>
-    <div class="col-8">
+    <div class="col-8 selectable" @click="getBlogById">
         <h3>{{ blog.title }}</h3>
         <p>{{ blog.body }}</p>
     </div>
@@ -10,12 +10,21 @@
 
 
 <script>
+import { blogsService } from '../services/BlogsService.js';
 import { AppState } from '../AppState';
 import { computed, reactive, onMounted } from 'vue';
 export default {
     props: { blog: { type: Object, required: true } },
-    setup() {
-        return {}
+    setup(props) {
+        return {
+            async getBlogById() {
+                try {
+                    await blogsService.getBlogById(props.blog.id)
+                } catch (error) {
+
+                }
+            }
+        }
     }
 };
 </script>
