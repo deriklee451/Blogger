@@ -33,7 +33,7 @@
               <label for="" class="form-label">image URL</label>
               <input v-model="editable.imgUrl" type="text" class="form-control" id="">
             </div>
-            <button class="btn btn-primary">Post</button>
+            <button class="btn btn-primary" type="submit" data-bs-dismiss="modal">Post</button>
           </form>
         </div>
         <div class="modal-footer">
@@ -59,7 +59,7 @@ export default {
       async createPost() {
         try {
           await blogsService.createPost(editable.value)
-          editable = {}
+          editable.value = {}
         } catch (error) {
 
         }
