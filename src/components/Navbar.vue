@@ -5,15 +5,8 @@
         <img alt="logo" src="../assets/img/cw-logo.png" height="45" />
       </div>
     </router-link>
-    <button
-      class="navbar-toggler"
-      type="button"
-      data-bs-toggle="collapse"
-      data-bs-target="#navbarText"
-      aria-controls="navbarText"
-      aria-expanded="false"
-      aria-label="Toggle navigation"
-    >
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
+      aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarText">
@@ -25,9 +18,14 @@
         </li>
       </ul>
       <!-- LOGIN COMPONENT HERE -->
+
+      <i class="fs-1 mdi mdi-pencil selectable" data-bs-toggle="modal" data-bs-target="#Modal"></i>
+
+
       <Login />
     </div>
   </nav>
+
 </template>
 
 <script>
@@ -60,5 +58,4 @@ a:hover {
     height: 64px;
   }
 }
-
 </style>

@@ -13,8 +13,14 @@
 <script>
 import { AppState } from '../AppState';
 import { computed, reactive, onMounted } from 'vue';
+import { blogsService } from '../services/BlogsService.js';
+import { useRoute } from 'vue-router';
 export default {
     setup() {
+        const route = useRoute()
+        onMounted(() => {
+            blogsService.getBlogById(route.params.id)
+        })
         return {
             blog: computed(() =>
                 AppState.activeBlog

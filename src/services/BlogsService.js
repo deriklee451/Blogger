@@ -13,6 +13,12 @@ class BlogsService {
         AppState.activeBlog = res.data
     }
 
+    async createPost(postData) {
+        const res = await api.post('api/blogs', postData)
+        logger.log(res.data)
+        AppState.blogs.push(res.data)
+    }
+
 }
 
 export const blogsService = new BlogsService()
