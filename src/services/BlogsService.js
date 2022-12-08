@@ -16,7 +16,7 @@ class BlogsService {
     async createPost(postData) {
         const res = await api.post('api/blogs', postData)
         logger.log(res.data)
-        AppState.blogs.push(res.data)
+        AppState.blogs.unshift(res.data)
     }
 
 }
